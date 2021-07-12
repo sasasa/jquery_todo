@@ -6,6 +6,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "@vitejs/plugin-legacy": "^1.4.3",
     "vite": "^2.4.0"
   },
   "dependencies": {
