@@ -138,34 +138,3 @@ try {
 } catch(error) {
   console.log(error)
 }
-
-function TextTypingAnime() {
-  $('.TextTyping').each(function () {
-    var elemPos = $(this).offset().top - 50;
-    var scroll = $(window).scrollTop();
-    var windowHeight = $(window).height();
-    var thisChildren = "";
-    if (scroll >= elemPos - windowHeight) {
-      thisChildren = $(this).children(); //spanタグを取得
-      //spanタグの要素の１つ１つ処理を追加
-      thisChildren.each(function(i) {
-        const time = 100;
-        //時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
-        $(this).delay(time * i).fadeIn(time);
-      });
-    } else {
-      thisChildren = $(this).children();
-      thisChildren.each(function () {
-        $(this).stop(); //delay処理を止める
-        $(this).css("display", "none"); //spanタグ非表示
-      });
-    }
-  });
-}
-
-$(window).scroll(function () {
-  TextTypingAnime();
-});
-$(window).on('load', function () {
-  TextTypingAnime();
-});
